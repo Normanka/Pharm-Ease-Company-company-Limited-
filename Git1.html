@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pharm Ease — Easy way to a better life</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">Pharm Ease</h1>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#followup">Follow-Up</a>
+        <a href="#locations">Locations</a>
+        <a href="#research">R&D</a>
+        <a href="#careers">Careers</a>
+        <a class="cta" href="#contact">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h2>Easy way to a better life.</h2>
+          <p>Building a pharmaceutical ecosystem that delivers high quality products and professional services to all up to grassroot level.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#services">Our Services</a>
+            <a class="btn btn-outline" href="#followup">Follow-Up Program</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Mission</h3>
+          <p>Deliver high-quality products and professional services through an interconnected network of NDA-accredited drugshops and pharmacies while investing into local drug R&D.</p>
+          <h3>Vision</h3>
+          <p>To be a leading, resilient, and ethically-driven pharmaceutical ecosystem integrating delivery with research and innovation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="container section">
+      <h2>About Us</h2>
+      <p>Pharm Ease Company is a private company registered in 2025 under the Uganda Registration Service Bureau (Reg. No: 80034637430847). We create a holistic pharmaceutical ecosystem to improve access to quality products and professional services and promote ethical entrepreneurship and reinvestment into drug research and design. fileciteturn0file0</p>
+
+      <div class="goals-grid">
+        <article>
+          <h4>Phase 1 (2026–2028)</h4>
+          <p>Establish 30 NDA-accredited drugshops across major cities of Uganda and partner with local clinics and hospitals.</p>
+        </article>
+        <article>
+          <h4>Phase 2 (2029–2031)</h4>
+          <p>Establish 12 full-scale pharmacies and interconnect them with the drugshop network for continuous service delivery.</p>
+        </article>
+        <article>
+          <h4>Phase 3</h4>
+          <p>Build a Drug Research & Design Center and expand regionally the retail arm, focusing on local innovation.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section alt">
+      <div class="container">
+        <h2>Services</h2>
+        <div class="services-grid">
+          <div class="service">
+            <h3>Retail</h3>
+            <p>Medicinal products (antibiotics, analgesics, antimalarials, etc). Prescription verification, pharmacist consultations, delivery & pickup.</p>
+            <ul>
+              <li>Upload prescriptions for verification</li>
+              <li>Talk to a pharmacist (ask for medication advice)</li>
+              <li>Delivery: Home delivery or pick-up</li>
+              <li>Payments: Mobile money, Cash on delivery</li>
+            </ul>
+          </div>
+          <div class="service">
+            <h3>Follow-Up Program</h3>
+            <p>Enroll for continuous care: SMS reminders, WhatsApp check-ins, or phone calls. Access your Follow-Up dashboard with a Follow-Up ID or phone number.</p>
+            <a class="btn" href="#followup">Enroll / Access Dashboard</a>
+          </div>
+          <div class="service">
+            <h3>Drug R&D</h3>
+            <p>Local pharmaceutical innovation: drug discovery, product design, formulation lab, QC, and AI-assisted drug design.</p>
+            <a class="btn" href="#research">Join Research Network</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Follow-Up Program -->
+    <section id="followup" class="container section">
+      <h2>Follow-Up Program</h2>
+      <p>Enroll to get ongoing pharmacy support and medication adherence reminders.</p>
+      <form id="followup-form" class="form" onsubmit="return submitFollowUp(event)">
+        <div class="grid-2">
+          <label>Full name<input name="name" required></label>
+          <label>Age<input name="age" type="number" min="0" required></label>
+        </div>
+        <div class="grid-2">
+          <label>Gender
+            <select name="gender" required>
+              <option value="">Select</option>
+              <option>Female</option>
+              <option>Male</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>Contact (phone or email)<input name="contact" required></label>
+        </div>
+        <label>Current medications / brief history<textarea name="history"></textarea></label>
+        <label>Preferred follow-up
+          <select name="mode" required>
+            <option value="">Select</option>
+            <option>SMS reminders</option>
+            <option>WhatsApp check-ins</option>
+            <option>Phone calls</option>
+          </select>
+        </label>
+        <div class="form-actions">
+          <button class="btn" type="submit">Enroll</button>
+          <button class="btn btn-outline" type="button" onclick="fillDemo()">Fill demo</button>
+        </div>
+        <p class="muted">This form is a demo. On a live site it would submit to a secure server and require data protection compliance.</p>
+      </form>
+    </section>
+
+    <!-- Locations -->
+    <section id="locations" class="section alt">
+      <div class="container">
+        <h2>Pharm Ease Near You</h2>
+        <p>Enter a location or allow the browser to share your location to find nearby Pharm Ease outlets.</p>
+
+        <div class="locator">
+          <input id="loc-input" placeholder="Enter town or postcode" />
+          <button class="btn" onclick="searchLocations()">Search</button>
+          <button class="btn btn-outline" onclick="useLocation()">Use my location</button>
+        </div>
+
+        <div id="locator-results" class="locator-results">
+          <!-- Demo results populated by script -->
+        </div>
+        <p class="muted">Demo results — replace with real data or backend lookup when deploying.</p>
+      </div>
+    </section>
+
+    <!-- Referral -->
+    <section id="referral" class="container section">
+      <h2>Referral to Health Facility</h2>
+      <p>If your condition requires further assessment, we can connect you to a nearby health center or partner clinic (with your consent).</p>
+      <form id="referral-form" class="form" onsubmit="return submitReferral(event)">
+        <label>Full name<input name="rname" required></label>
+        <label>Contact<input name="rcontact" required></label>
+        <label>Brief description<textarea name="rdesc" required></textarea></label>
+        <div class="grid-2">
+          <label>Preferred facility type
+            <select name="rtype">
+              <option>Health center</option>
+              <option>Hospital</option>
+              <option>Specialist clinic</option>
+            </select>
+          </label>
+          <label>Urgency
+            <select name="urgency">
+              <option>Routine</option>
+              <option>Urgent</option>
+              <option>Emergency</option>
+            </select>
+          </label>
+        </div>
+        <label><input type="checkbox" name="consent" required> I consent to share my care details with the receiving facility.</label>
+        <div class="form-actions">
+          <button class="btn" type="submit">Submit Referral</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Research -->
+    <section id="research" class="section alt">
+      <div class="container">
+        <h2>Drug Research & Design</h2>
+        <p>Pharm Ease drives local pharmaceutical innovation — drug discovery, product design, formulation labs, quality control and an innovation incubator. We collaborate with academic institutions, regulators, NGOs and private investors. fileciteturn0file0</p>
+        <a class="btn" href="#contact">Collaborate / Sponsor</a>
+      </div>
+    </section>
+
+    <!-- Careers -->
+    <section id="careers" class="container section">
+      <h2>Careers & Partnerships</h2>
+      <p>Join our team — internships, research placements and partnership opportunities available. Download our Careers pack or contact HR to apply.</p>
+      <div class="cta-row">
+        <a class="btn" href="#contact">Contact HR</a>
+        <a class="btn btn-outline" href="#downloads">Download R&D Brief</a>
+      </div>
+    </section>
+
+    <!-- Contact / Footer form -->
+    <section id="contact" class="section alt container">
+      <h2>Contact Us</h2>
+      <p>Phone: 0700 123456 (demo) | Email: hello@pharmease.example</p>
+      <form id="contact-form" class="form" onsubmit="return submitContact(event)">
+        <div class="grid-2">
+          <label>Your name<input name="cname" required></label>
+          <label>Email or phone<input name="ccontact" required></label>
+        </div>
+        <label>Message<textarea name="cmessage" required></textarea></label>
+        <div class="form-actions">
+          <button class="btn" type="submit">Send Message</button>
+        </div>
+      </form>
+      <footer class="site-footer">
+        <p>&copy; Pharm Ease Company 2025 • Registered in Uganda (Reg. No: 80034637430847). This is a demo site built from user-provided content. fileciteturn0file0</p>
+      </footer>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
